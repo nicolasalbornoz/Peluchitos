@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+        xmlns:tools="http://schemas.android.com/tools"
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:padding="20dp"
+        tools:context=".AddFragment"
+        android:orientation="vertical">
+
+    <EditText android:layout_width="match_parent"
+              android:layout_height="wrap_content"
+              android:id="@+id/edNombre"
+              android:hint="@string/nombre_peluche"
+              android:textSize="20sp"
+    />
+
+    <EditText android:layout_width="match_parent"
+              android:layout_height="wrap_content"
+              android:id="@+id/edId"
+              android:hint="@string/id_peluche"
+              android:textSize="20sp"
+              android:inputType="number"
+    />
+
+    <EditText android:layout_width="match_parent"
+              android:layout_height="wrap_content"
+              android:id="@+id/edCantidad"
+              android:hint="@string/cantidad_peluche"
+              android:textSize="20sp"
+              android:inputType="number"
+    />
+
+    <EditText android:layout_width="match_parent"
+              android:layout_height="wrap_content"
+              android:id="@+id/edPrecio"
+              android:hint="@string/precio_peluche"
+              android:textSize="20sp"
+              android:inputType="number"
+    />
+
+    <Button android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/bEnviar"
+            android:layout_margin="30dp"
+            android:text="@string/enviar"
+            android:textSize="25sp"
+    />
+
+</LinearLayout>

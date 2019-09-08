@@ -1,0 +1,17 @@
+<resources>
+    <string name="app_name">Peluchitos</string>
+    <string name="agregar">Agregar</string>
+    <string name="buscar">Buscar</string>
+    <string name="eliminar">Eliminar</string>
+    <string name="inventario">Ver inventario</string>
+    <string name="enviar">Enviar</string>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="nombre_peluche">Ingrese el nombre del peluche</string>
+    <string name="id_peluche">Ingrese el id del peluche</string>
+    <string name="cantidad_peluche">Ingrese el número de peluches</string>
+    <string name="precio_peluche">Ingrese el precio del peluche</string>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+</resources>
