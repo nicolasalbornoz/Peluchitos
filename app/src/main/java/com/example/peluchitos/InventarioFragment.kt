@@ -13,56 +13,23 @@ class InventarioFragment : Fragment() {
 
     private lateinit var recyclerView: RecyclerView
 
-  //  private lateinit var peluche : Peluche
+    override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
+        val view = inflater.inflate(R.layout.fragment_inventario,container,false)
 
-    var lista_peluche: ArrayList<Peluche> = ArrayList()
+        var peluche = arguments?.getParcelableArrayList<Peluche>("pelu")
+        peluche?.toMutableList()
 
-    //private var data = ""
+        var peluchitos : MutableList<Peluche> = ArrayList()
+        peluchitos = peluche!!
 
-    override fun onCreateView(
-        inflater: LayoutInflater, container: ViewGroup?,
-        savedInstanceState: Bundle?
-    ): View? {
-
-        val view: View = inflater.inflate(R.layout.fragment_inventario, container, false)
-        var inventario_peluches : MutableList<Peluche> = ArrayList()
-
-        if(arguments != null){
-
-            lista_peluche = arguments!!.getParcelableArrayList(ARG_PARAM)!!
-
-            for(peluche in lista_peluche){
-                inventario_peluches.add(Peluche(peluche.nombre,peluche.id,peluche.cantidad,peluche.precio))
-            }
-        }
-
-        recyclerView = view.findViewById(R.id.recycler) as RecyclerView
+        recyclerView = view.findViewById(R.id.recycler)
         recyclerView.setHasFixedSize(true)
+        recyclerView.layoutManager = LinearLayoutManager(this.context,RecyclerView.VERTICAL,false)
 
-        recyclerView.layoutManager = LinearLayoutManager(
-            this.context,RecyclerView.VERTICAL, false)
+        val pelucheAdapter = PeluchitosAdapter(peluche,this.requireContext())
+        recyclerView.adapter = pelucheAdapter
 
         return view
 
     }
-    //        if(arguments != null){
-//           lista_peluche = arguments!!.getParcelableArrayList(ARG_PARAM)!!
-//
-//            for(peluche in lista_peluche){
-//                data = data + peluche.nombre + " " + peluche.id + " " + peluche.cantidad + " " + peluche.precio + "\n"
-//            }
-//
-//        }
-    companion object{
-        private val ARG_PARAM = "MyObject"
-
-        fun newInstance(lista_peluche: ArrayList<Peluche>):InventarioFragment{
-            val inventarioFragment = InventarioFragment()
-            val args = Bundle()
-            args.putParcelableArrayList(ARG_PARAM,lista_peluche)
-            inventarioFragment.arguments = args
-            return inventarioFragment
-        }
-    }
-
 }

@@ -4,14 +4,20 @@
     <string name="buscar">Buscar</string>
     <string name="eliminar">Eliminar</string>
     <string name="inventario">Ver inventario</string>
-    <string name="enviar">Enviar</string>
+    <string name="enviar">Agregar</string>
 
     <!-- TODO: Remove or change this placeholder text -->
-    <string name="nombre_peluche">Ingrese el nombre del peluche</string>
-    <string name="id_peluche">Ingrese el id del peluche</string>
-    <string name="cantidad_peluche">Ingrese el número de peluches</string>
-    <string name="precio_peluche">Ingrese el precio del peluche</string>
+    <string name="nombre_peluche">Nombre del peluche</string>
+    <string name="id_peluche">Id del peluche</string>
+    <string name="cantidad_peluche">Número de peluches</string>
+    <string name="precio_peluche">Precio del peluche</string>
 
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="Cantidad">Cantidad:</string>
+    <string name="id">ID:</string>
+    <string name="nombre">Nombre:</string>
+    <string name="idborrar">Digíte el Id</string>
+    <string name="borrar">Borrar</string>
+    <string name="busque">Ingrese el nombre</string>
 </resources>

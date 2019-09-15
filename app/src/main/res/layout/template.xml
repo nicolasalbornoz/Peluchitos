@@ -1,17 +1,116 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-              android:orientation="horizontal"
-              android:layout_width="match_parent"
-              android:layout_height="100dp"
-              android:padding="10dp">
 
-    <TextView android:layout_width="match_parent"
-              android:layout_height="match_parent"
-              android:hint="peluche1"
-              android:id="@+id/tviNombre"
-              android:textSize="24dp"
-              android:gravity="center"
-              android:textColor="@android:color/black"
-    />
+<androidx.cardview.widget.CardView
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        android:layout_width="match_parent"
+        android:layout_height="115dp"
+        android:layout_margin="2dp">
 
-</LinearLayout>
+    <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+            <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="22dp"
+                    android:hint="@string/id"
+                    android:id="@+id/tvId_stock"
+                    android:textSize="16sp"
+                    app:layout_constraintBottom_toTopOf="@+id/tvNombre_stock_texto"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_bias="0.041"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintVertical_bias="0.29"/>
+
+            <TextView
+                    android:id="@+id/tvId_stock_texto"
+                    android:layout_width="wrap_content"
+                    android:layout_height="22dp"
+                    android:textColor="@android:color/black"
+                    android:textSize="16sp"
+                    app:layout_constraintBottom_toTopOf="@+id/tvNombre_stock_texto"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_bias="0.156"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintVertical_bias="0.29"/>
+
+            <TextView
+                    android:id="@+id/tvNombre_stock"
+                    android:layout_width="115dp"
+                    android:layout_height="23dp"
+                    android:gravity="center"
+                    android:hint="@string/nombre"
+                    android:textSize="20sp"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_bias="0.0"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+            />
+
+            <TextView
+                    android:id="@+id/tvNombre_stock_texto"
+                    android:layout_width="wrap_content"
+                    android:layout_height="62dp"
+                    android:gravity="center"
+                    android:textColor="@android:color/black"
+                    android:textSize="24sp"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_bias="0.04"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintVertical_bias="1.0"/>
+
+            <TextView
+                    android:id="@+id/tvPrecio_stock_texto"
+                    android:layout_width="wrap_content"
+                    android:layout_height="62dp"
+                    android:gravity="center"
+                    android:textColor="@android:color/black"
+                    android:textSize="24sp"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_bias="0.894"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintVertical_bias="0.452" />
+
+            <TextView
+                    android:id="@+id/tvCantidad_stock"
+                    android:layout_width="wrap_content"
+                    android:layout_height="28dp"
+                    android:gravity="end"
+                    android:hint="@string/Cantidad"
+                    android:textSize="14sp"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_bias="0.84"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/tvPrecio_stock_texto"
+                    app:layout_constraintVertical_bias="1.0"/>
+
+            <TextView
+                    android:id="@+id/tvCantidad_stock_texto"
+                    android:layout_width="wrap_content"
+                    android:layout_height="28dp"
+                    android:gravity="end"
+                    android:textColor="@android:color/black"
+                    android:textSize="14sp"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_bias="0.954"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/tvPrecio_stock_texto"
+                    app:layout_constraintVertical_bias="0.0" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </LinearLayout>
+</androidx.cardview.widget.CardView>
