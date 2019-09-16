@@ -4,9 +4,7 @@ import android.content.Context
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.Filter
-import android.widget.Filterable
-import android.widget.Toast
+import android.widget.*
 import androidx.recyclerview.widget.RecyclerView
 import kotlinx.android.synthetic.main.template.view.*
 
@@ -32,6 +30,7 @@ class PeluchitosAdapter:  RecyclerView.Adapter<PeluchitosAdapter.PeluchitosViewH
     }
 
     override fun getFilter(): Filter {
+
         return object : Filter(){
 
             override fun performFiltering(charString: CharSequence?): FilterResults {
@@ -50,6 +49,7 @@ class PeluchitosAdapter:  RecyclerView.Adapter<PeluchitosAdapter.PeluchitosViewH
                         }
                     }
                 }
+
                 val filterResult = Filter.FilterResults()
                 filterResult.values = FilteredList
                 return filterResult

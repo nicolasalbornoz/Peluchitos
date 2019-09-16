@@ -17,10 +17,7 @@ class InventarioFragment : Fragment() {
         val view = inflater.inflate(R.layout.fragment_inventario,container,false)
 
         var peluche = arguments?.getParcelableArrayList<Peluche>("pelu")
-        peluche?.toMutableList()
-
-        var peluchitos : MutableList<Peluche> = ArrayList()
-        peluchitos = peluche!!
+        peluche!!.toMutableList()
 
         recyclerView = view.findViewById(R.id.recycler)
         recyclerView.setHasFixedSize(true)

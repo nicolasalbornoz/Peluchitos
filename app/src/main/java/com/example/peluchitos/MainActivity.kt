@@ -2,7 +2,9 @@ package com.example.peluchitos
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.util.Log
 import android.widget.TextView
+import android.widget.Toast
 import androidx.fragment.app.FragmentManager
 import androidx.fragment.app.FragmentTransaction
 import com.google.android.material.bottomnavigation.BottomNavigationView
@@ -13,8 +15,26 @@ class MainActivity : AppCompatActivity(), comunicador {
     private lateinit var peluche : Peluche
 
     override fun enviarDatos(nombre: String, id: String, cantidad: String, precio: String){
+
+        var YaExiste : Boolean = false
         peluche = Peluche(nombre,id,cantidad,precio)
-        lista_peluches.add(peluche)
+
+        for(i in lista_peluches){
+            if(i.id.toLowerCase() == peluche.id.toLowerCase() || i.nombre.toLowerCase() == peluche.nombre.toLowerCase()){
+
+              YaExiste = true
+              break
+            }
+        }
+
+        if(YaExiste){
+            Toast.makeText(this,"Peluche existente", Toast.LENGTH_SHORT).show()
+
+        }else{
+            lista_peluches.add(peluche)
+            Toast.makeText(this,"Peluche agregado", Toast.LENGTH_SHORT).show()
+
+        }
     }
 
     override fun deleteItem(idd: String) {

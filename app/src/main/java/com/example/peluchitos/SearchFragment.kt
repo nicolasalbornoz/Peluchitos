@@ -19,7 +19,6 @@ import java.lang.ClassCastException
 class SearchFragment : Fragment() {
 
     private lateinit var recyclerView: RecyclerView
-    var interfaz : comunicador ?= null
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -29,10 +28,7 @@ class SearchFragment : Fragment() {
         val view = inflater.inflate(R.layout.fragment_search,container,false)
 
         var peluche = arguments?.getParcelableArrayList<Peluche>("pelu")
-        peluche?.toMutableList()
-
-        var peluchitos : MutableList<Peluche> = ArrayList()
-        peluchitos = peluche!!
+        peluche!!.toMutableList()
 
         recyclerView = view.findViewById(R.id.recycler)
         recyclerView.setHasFixedSize(true)
@@ -48,21 +44,10 @@ class SearchFragment : Fragment() {
                 Toast.makeText(context,"Campo vacío", Toast.LENGTH_SHORT).show()
             }
             else{
-                pelucheAdapter.filter.filter(nombreb)
+               pelucheAdapter.filter.filter(nombreb)
             }
-
         }
-
         return view
-    }
-
-    override fun onAttach(context: Context?) {
-        super.onAttach(context)
-        try {
-            interfaz = context as comunicador
-        }catch (e: ClassCastException){
-            Log.d("exception", e.toString())
-        }
     }
 }
 

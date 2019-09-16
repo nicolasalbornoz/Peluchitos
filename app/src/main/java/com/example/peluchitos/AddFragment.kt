@@ -14,7 +14,6 @@ import kotlinx.android.synthetic.main.fragment_add.view.*
 class AddFragment : Fragment() {
 
     var interfaz: comunicador ?= null
-    var boleano:Boolean = false
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -22,7 +21,6 @@ class AddFragment : Fragment() {
     ): View? {
 
         val view: View = inflater.inflate(R.layout.fragment_add, container, false)
-        var peluche = arguments?.getParcelableArrayList<Peluche>("pelu")
 
         view.bEnviar.setOnClickListener {
 
@@ -40,12 +38,12 @@ class AddFragment : Fragment() {
 
                     builder.setPositiveButton(android.R.string.yes) { dialog, which ->
 
-                        Toast.makeText(context,"Peluche agregado", Toast.LENGTH_SHORT).show()
                         interfaz?.enviarDatos(nombre,id,cantidad,precio)
                         view.edId.text.clear()
                         view.edNombre.text.clear()
                         view.edPrecio.text.clear()
                         view.edCantidad.text.clear()
+
                     }
 
                     builder.setNegativeButton(android.R.string.no) { dialog, which ->
